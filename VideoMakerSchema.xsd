@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="VideoMaker"
+    targetNamespace="http://tempuri.org/VideoMaker.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/VideoMaker.xsd"
+    xmlns:mstns="http://tempuri.org/VideoMaker.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:element name="VideoMaker">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Name" type="xs:string"/>
+        <xs:element name="Description" type="xs:string"/>
+        <xs:element name="BaseDirectory" type="xs:string"/>
+        <xs:element name="Format" type="VideoFormat" />
+        <xs:element name="FPS" type="xs:decimal" />
+        <xs:element name="Videos" type="Videos" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Resources">
+    <xs:sequence>
+      <xs:element name="Resource" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Id" />
+            <xs:element name="Type" />
+            <xs:element name="Videos" type="Videos" />
+            <xs:element name="Sequences" type="Sequences" />
+            <xs:element name="Tracks" type="Tracks" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Videos">
+    <xs:sequence>
+      <xs:element name="Video" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Sequences" type="Sequences" />
+          </xs:sequence>
+          <xs:attribute name="Id" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Sequences">
+    <xs:sequence>
+      <xs:element name="Sequence" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Tracks" type="Tracks" />
+          </xs:sequence>
+          <xs:attribute name="Id"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Tracks">
+    <xs:sequence>
+      <xs:element name="Track" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+          </xs:sequence>
+          <xs:attribute name="Id" type="xs:string" />
+          <xs:attribute name="Start" type="xs:string" />
+          <xs:attribute name="End" type="xs:string" />
+          <xs:attribute name="Type" type="MediaType" default="Auto"/>
+          <xs:attribute name="File" type="xs:string" />
+          <xs:attribute name="Effect" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <!-- Type of file: Media|SubText| -->
+  <xs:simpleType name="MediaType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="(Video|Audio|Text|SubText|SubAudio|Picture|Auto)"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="VideoFormat">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="(NTSC|Pal|720p|1080p)"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
