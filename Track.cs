@@ -3,16 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace videomaker
+public partial class TracksTrack
 {
-    public class Track
-    {
 
-          public String Id;
-          public String Start;
-          public String End;
-          public String Type;
-          public String File;
-          public String Effect;
-    }
 }

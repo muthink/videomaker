@@ -3,8 +3,8 @@
   <Name>Sample Video</Name>
   <Description>This is a sample video</Description>
   <Videos>
-    <Video Id="1">
-      <Sequences Id="First">
+    <Video Id="FirstSampleVideo">
+      <Sequences Id="Title">
         <Tracks>
           <Track Id="First" Type="Text"  />
         </Tracks>

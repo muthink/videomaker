@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace videomaker
+public partial class ResourcesResource
 {
-    public class Resource
-    {
-    }
+
 }

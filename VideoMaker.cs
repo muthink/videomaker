@@ -26,6 +26,14 @@ using System.Xml.Serialization;
         public void Run()
         {
             Console.WriteLine("Name:" + this.Name);
+            Console.WriteLine("Number of Videos: " + this.Videos.Length);
+            int videoNumber = 1;
+            foreach (VideosVideo video in Videos)
+            {
+                Console.WriteLine("Processing Video " + videoNumber.ToString() + " : " + video.Id );
+                video.Generate(this);
+                ++videoNumber;
+            }
             Console.ReadKey();
         }
     }
