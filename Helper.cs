@@ -23,7 +23,7 @@ namespace videomaker
             rtb.Render(window);
             var enc = new System.Windows.Media.Imaging.PngBitmapEncoder();
             BitmapFrame frame = System.Windows.Media.Imaging.BitmapFrame.Create(rtb);
-            enc.Frames.Add();
+            return null;
         }
         public static void SaveWindow(Window window, int dpi, string filename)
         {

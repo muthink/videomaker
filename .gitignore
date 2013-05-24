@@ -5,3 +5,7 @@
 /bin/Debug
 
 /*.suo
+/bin
+/obj
+/videomakerWpf/bin
+/videomakerWpf/obj
